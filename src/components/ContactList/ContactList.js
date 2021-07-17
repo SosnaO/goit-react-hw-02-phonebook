@@ -1,26 +1,16 @@
 // import render from "dom-serializer";
-// import React, { Component } from "react";
+import React from "react";
 
-// class ContactList extends Component{
-//     state = {
-//       contacts: [],
-//       name: ''
-//     }
-//   }
+    const ContactList = ({ contacts }) =>
+     <ul> {contacts.map(contacts=> 
+     <li key={contacts.id}>
+         <p>{contacts.name}</p>
+         <p>{contacts.number}</p>
 
-// render() {
-
-
-    
-// }
-
-//   <input
-//   type="text"
-//   name="name"
-//   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//   title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-//   required
-// />
+     </li>)}
+     
+     </ul>
 
 
-//   export default ContactList;
+
+  export default ContactList;
