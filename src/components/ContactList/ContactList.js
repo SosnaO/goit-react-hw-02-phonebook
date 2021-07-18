@@ -1,15 +1,18 @@
 // import render from "dom-serializer";
 import React from "react";
+import ContactlistItem from './ContactListItem'
 import PropTypes from 'prop-types';
 
     const ContactList = ({ contacts, onDelete }) =>(
      <ul> {contacts.map(({ id, name, number })=> ( 
-     <li key={id}>
-         <p>{name}</p>
-         <p>{number}</p>
-         <button onClick={()=> onDelete=(id)}>Delete</button>
-
-     </li>))}
+         <ContactlistItem 
+         key={id}
+         id={id}
+         name={name}
+         number={number}
+         onDelete={onDelete}
+     />
+     ))}
       
      </ul>
     );
