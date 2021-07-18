@@ -4,7 +4,7 @@ import shortid from 'shortid'
 
 class ContactForm extends Component{
     state = {
-        contacts: [],
+        // contacts: [],
         name: '',
         number: ''
      }
@@ -14,11 +14,12 @@ class ContactForm extends Component{
 
      handleChange=event=>{
        const {name, value}= event.currentTarget;
-       this.setState({[name]: value})
+       this.setState({id: shortid.generate(),[name]: value})
    };
    
    handleSubmit=event=>{
      event.preventDefault();
+     
      this.props.onSubmit(this.state);
      this.reset();
    };
@@ -55,7 +56,7 @@ class ContactForm extends Component{
         />
         </label>
 
-        <button type="submit">Add contact</button>
+        <button  type="submit">Add contact</button>
 
 
         </form>

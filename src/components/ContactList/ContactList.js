@@ -1,15 +1,24 @@
 // import render from "dom-serializer";
 import React from "react";
+import PropTypes from 'prop-types';
 
-    const ContactList = ({ contacts }) =>
-     <ul> {contacts.map(contacts=> 
-     <li key={contacts.id}>
-         <p>{contacts.name}</p>
-         <p>{contacts.number}</p>
+    const ContactList = ({ contacts, onDelete }) =>(
+     <ul> {contacts.map(({ id, name, number })=> ( 
+     <li key={id}>
+         <p>{name}</p>
+         <p>{number}</p>
+         <button onClick={()=> onDelete=(id)}>Delete</button>
 
-     </li>)}
-     
+     </li>))}
+      
      </ul>
+    );
+
+    ContactList.propTypes = {
+        contacts: PropTypes.array.isRequired,
+        onDelete: PropTypes.func.isRequired,
+      };
+    
 
 
 
