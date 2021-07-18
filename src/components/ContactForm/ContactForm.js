@@ -1,6 +1,7 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import shortid from 'shortid'
+import styles from './ContactForm.module.css'
 class ContactForm extends Component{
     state = {
         name: '',
@@ -25,9 +26,9 @@ class ContactForm extends Component{
   };
     render(){
                 return(
-                <form onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>Name
-        <input
+                <form  className={styles.form} onSubmit={this.handleSubmit}>
+        <label className={styles.formLabel} htmlFor={this.nameInputId}>Name
+        <input className={styles.formInput}
         type="text"
         name="name"
         id={this.nameInputId}
@@ -39,8 +40,8 @@ class ContactForm extends Component{
         />
         </label>
 
-        <label htmlFor={this.numberInputId}>Number
-            <input
+        <label className={styles.formLabel} htmlFor={this.numberInputId}>Number
+            <input className={styles.formInput}
         type="tel"
         name="number"
        id={this.numberInputId}
@@ -51,7 +52,7 @@ class ContactForm extends Component{
         onChange={this.handleChange}
         />
         </label>
-        <button  type="submit">Add contact</button>
+        <button className={styles.buttonSubmit} type="submit">Add contact</button>
         </form>
         )
     }

@@ -3,6 +3,7 @@ import './App.css';
 import ContactList from './components/ContactList/ContactList'
 import ContactForm from './components/ContactForm/ContactForm'
 import Filter from './components/Filter/Filter'
+import styles from './components/ContactForm/ContactForm.module.css'
 
 class App extends Component {
   state = {
@@ -54,7 +55,7 @@ const visibleContacts = this.visibleContacts();
    
  return (
    
-    <div>
+    <div className={styles.phonebook}>
   <h1>Phonebook</h1>
   <ContactForm
    onSubmit={this.formSubmitHandler}
