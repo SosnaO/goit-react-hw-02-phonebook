@@ -1,4 +1,4 @@
-// import render from "dom-serializer";
+
 import React from "react";
 import ContactlistItem from './ContactListItem'
 import PropTypes from 'prop-types';
@@ -13,8 +13,7 @@ import PropTypes from 'prop-types';
          onDelete={onDelete}
      />
      ))}
-      
-     </ul>
+      </ul>
     );
 
     ContactList.propTypes = {
@@ -22,7 +21,4 @@ import PropTypes from 'prop-types';
         onDelete: PropTypes.func.isRequired,
       };
     
-
-
-
   export default ContactList;
